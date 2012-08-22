@@ -1,0 +1,31 @@
+@mixin smart-button($grad_start, $grad_end, $shadow: black, $border: black, $boxshadow: white, $textshadow: black, $color: black, $alpha: 0.6)
+  $avg_color: mix($grad_start, $grad_end)
+  $avg: lightness($avg_color)
+  $border: darken($avg_color, 20%)
+  @if $avg > 75
+    $alpha: 0.6
+    $color: darken($avg_color, 65%)
+    $color: saturate($color, 20%)
+    $textshadow: lighten($avg_color, 90%)
+  @else
+    $alpha: 0.3
+    $color: lighten($avg_color, 65%)
+    $color: saturate($color, 20%)
+    $textshadow: darken($avg_color, 90%)
+  background: $avg_color
+  +box-shadow(rgba($boxshadow, $alpha) 0 1px 0 inset, rgba($boxshadow, $alpha) 0 1px 0 0)
+  +background-image(linear-gradient($grad_start, $grad_end))
+  +text-shadow(rgba($textshadow, $alpha) 0 1px 0)
+  border: 1px solid $border
+  span
+    color: $color
+    +text-shadow($textshadow 0 1px 0)
+  &:hover
+    background: darken($avg_color, 4%)
+    +background-image(linear-gradient($grad_end, $grad_start 70%))
+    border: 1px solid darken($border, 10%)
+    +box-shadow(rgba(desaturate($border, 20%), 0.55) 0 2px 4px inset, rgba($boxshadow, $alpha) 0 1px 0 0)
+    .ie7 &, .ie8 &
+      border: none
+      span
+        color: lighten($color, 20%)

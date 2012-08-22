@@ -1,0 +1,55 @@
+.navigation
+	float: right
+	width: 200px
+	text-align: center
+	+respond-to(smartphone)
+		float: none
+		margin: auto
+		margin-top: $pad
+	.current_page
+		+border-radius(20px)
+		position: relative
+		height: 50px
+		background: #FFF
+		border: 2px solid #313A55
+		width: 200px
+		text-align: center
+		color: #000
+		line-height: 50px
+		font-size: 20px
+		+css_arrow($direction: "down", $top: auto, $bottom: -12px, $left: 88px, $right: auto, $color: #FFF, $border-color: #313A55, $size: 12px, $border-size: 3px)
+		margin-bottom: 25px
+		+respond-to(smartphone)
+			display: none
+			margin: auto
+	.links
+		a
+			+border-radius(4px)
+			+box-shadow(0px 2px 3px #000)
+			+text-shadow(0px 1px 3px #000)
+			background: #0B1627
+			+background-image(linear-gradient(#0B1627, #102038))
+			border: 2px solid #2F374D	
+			text-align: center
+			display: block
+			position: relative
+			margin: $pad/2 + 3px 0
+			padding: 10px
+			font-size: 12px
+			color: #F4F4F5
+			&.selected
+				background: #13253F !important
+				+animate(fadeOutHalf)
+			&:hover
+				background: #0D1B30
+				cursor: hand
+				cursor: pointer
+	.improving
+		margin: auto
+		margin-top: $pad * 2
+	.job
+		display: block
+		margin-top: $pad/2
+		line-height: 14px
+		color: #9A9DA1
+		font-size: 11px
