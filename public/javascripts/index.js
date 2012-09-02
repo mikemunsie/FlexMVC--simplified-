@@ -2,6 +2,10 @@ var home = function(){
     var self = this;
 
     self.home = function(){
+
+    	munstro.get("test/test", false, this, function(results){
+    		console.log(results);
+    	});
     }
     
   // Call teh constructor

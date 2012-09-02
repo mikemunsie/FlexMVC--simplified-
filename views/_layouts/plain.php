@@ -14,7 +14,6 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="http://mikemunsie.com/_public/images/facebook_share.png" />
 		<meta property="og:site_name" content="FlexMVC PHP MVVM Framework" />	
-		<link rel="stylesheet" type="text/css" media="all" href="_public/stylesheets/style.css"/>
 		<?php \flexMVC::output_css(); ?>
 	</head>
 	<body class="<?php echo(flexMVC::$bodyclass); ?>">
